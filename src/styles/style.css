@@ -1,0 +1,86 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: all .25s ease;
+}
+
+nav.fix {
+    padding-top: .5rem !important;
+    padding-bottom: .5rem !important;
+    border-bottom: 0;
+    background-color: var(--color-bg);
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+
+nav #about-me {
+    transition: font-size .25s ease;
+}
+
+nav.fix #about-me {
+    font-size: 2rem;
+}
+
+nav ul a {
+    position: relative;
+}
+
+nav ul a.active,
+aside ul a.active {
+    color: var(--color-primary);
+}
+
+nav ul a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: -4px;
+    right: 0;
+    border-radius: 1px;
+    background-color: var(--color-primary);
+    transition: width .3s ease;
+}
+
+nav ul a:hover::before {
+    width: 100%;
+}
+
+header div img {
+    transition: scale .4s ease;
+}
+
+aside {
+    z-index: 101;
+    position: fixed;
+    width: 100px;
+    margin-right: -100%;
+    transition: width .25s ease;
+    overflow: visible;
+}
+
+aside.custom-visible {
+    display: inline-block;
+    width: 50vw;
+    margin-right: -20px;
+}
+
+
+@media only screen and (min-width: 320px) {
+    header.custom-bg {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+            url('/public/img/IMG_20251202_204003_098.webp');
+        background-position: 55% 12%;
+        background-repeat: no-repeat;
+        background-size: 150% auto;
+        margin: 0 -20px;
+        overflow: hidden;
+    }
+}
