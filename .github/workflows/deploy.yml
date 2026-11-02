@@ -32,10 +32,10 @@ jobs:
 
       - name: Prepare website
         run: |
-          mkdir -p public/assets
-          cp src/styles/output.css public/assets/style.css
-          mkdir -p _site
-          cp -r public/. _site/
+            mkdir -p public/
+            cp src/styles/output.css public/styles/style.css
+            mkdir -p _site
+            cp -r public/. _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
