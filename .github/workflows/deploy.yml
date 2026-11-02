@@ -32,11 +32,16 @@ jobs:
 
       - name: Prepare website
         run: |
-            mkdir -p public/
-            cp src/styles/output.css public/styles/style.css
-            mkdir -p _site
-            cp -r public/. _site/
+          mkdir -p _site
+          cp -r public/. _site/
 
+          mkdir -p _site/src/styles
+          mkdir -p _site/src/js
+
+          cp src/styles/output.css _site/src/styles/
+          cp src/styles/style.css _site/src/styles/
+          cp src/js/script.js _site/src/js/
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
